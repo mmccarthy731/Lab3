@@ -16,7 +16,7 @@ namespace LabThree
 
             while (repeat == "Y")
             {
-                int num = GetNumber("Please enter an integer value: ");
+                int num = GetNumber("Please enter a positive integer value: ");
                 Console.WriteLine("Number\t\tSquared\t\tCubed\r\n========\t========\t========");
                 for (int i = 1; i <= num; i++)
                 {
@@ -31,7 +31,7 @@ namespace LabThree
             Console.Write(message);
             string input = Console.ReadLine();
             bool success = int.TryParse(input, out int number);
-            if (!success)
+            if (!success || number < 0)
             {
                 Console.Write("Invalid input. ");
                 return GetNumber(message);
